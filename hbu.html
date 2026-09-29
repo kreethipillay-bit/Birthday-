@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Harleein</title>
+
+<style>
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.popup {
+    position: absolute;
+    width: 280px;
+    background: #eee;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+}
+
+.title-bar {
+    background: #000080;
+    color: white;
+    padding: 6px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.message {
+    color: black;
+    padding: 25px 15px;
+    text-align: center;
+    font-size: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<script>
+
+const messages = [
+    "HAPPY BIRTHDAY HARLEEIN",
+    "A.K.A LARP QUEEN",
+    "hopeee you have a good one, but sounds like I ruined your day",
+	"im sorryy forr thatt (im not)",
+    "tooo more titless to be captureddd",
+    "tooo more making mummm and dadd proud",
+    "an inspirationn to brotherrr",
+    "and yeahhh, stayyy healthy always",
+    "stayyy safe always",
+	"and mostt importantlyy...",
+    "stayy happyyy always",
+	"im not trying to winn your heartt or smthingg",
+	"i just wanted to wishh youu thats it",
+	"dont get me wrongg :)",
+    "... goodbyeee"
+];
+
+let index = 0;
+
+function createPopup() {
+
+    if (index >= messages.length) return;
+
+    const popup = document.createElement("div");
+    popup.className = "popup";
+
+    popup.innerHTML = `
+        <div class="title-bar">Happy 17th Birthday</div>
+        <div class="message">${messages[index]}</div>
+    `;
+
+    const maxX = Math.max(0, window.innerWidth - 290);
+    const maxY = Math.max(0, window.innerHeight - 130);
+
+    popup.style.left = Math.random() * maxX + "px";
+    popup.style.top = Math.random() * maxY + "px";
+
+    document.body.appendChild(popup);
+
+    index++;
+
+    setTimeout(createPopup, 3000);
+}
+
+setTimeout(createPopup, 500);
+
+</script>
+
+</body>
+</html>
